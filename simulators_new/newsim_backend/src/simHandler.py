@@ -71,6 +71,7 @@ def removeObject(sim, obj_in):
 
 
 def calc_move_best_path(sim, object_list, rover, delta_y, delta_x):
+    # TODO: Check logic, though seems good enough
     angle = math.atan2(delta_y, delta_x)
     if angle >= 0:
         diff = rover.fov/2 - angle
@@ -83,8 +84,8 @@ def calc_move_best_path(sim, object_list, rover, delta_y, delta_x):
 
 
 def calc_visible(sim, object_list):
-    delta_x = 0  # needs to be math'd out
-    delta_y = 0  # ditto to this m80
+    delta_x = 0  # TODO: needs to be math'd out
+    delta_y = 0  # TODO: ditto to this m80
     for item in object_list:
         if (math.atan2(delta_y, delta_x) < sim.rover.fov / 2 and
                 math.hypot(delta_x, delta_y) < sim.rover.cv_thresh):
